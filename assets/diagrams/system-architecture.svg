@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700" role="img" aria-labelledby="title desc">
+  <title id="title">Request workflow</title>
+  <desc id="desc">A message moves from the LogiFlow client to the supervisor, then through exactly one specialist and its system, and the reply streams back.</desc>
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.42" stop-color="#2563eb"/>
+      <stop offset="0.72" stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 1.4 9 5 0 8.6Z" fill="#7dd3fc"/>
+    </marker>
+    <clipPath id="card"><rect width="1440" height="700" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)" font-family="Inter, Segoe UI, sans-serif">
+    <rect width="1440" height="700" fill="#070d18"/>
+    <rect width="1440" height="6" fill="url(#bar)"/>
+
+    <text x="48" y="46" fill="#94a3b8" font-size="15" font-weight="700" letter-spacing="1.2">01  MESSAGE</text>
+    <text x="430" y="46" fill="#94a3b8" font-size="15" font-weight="700" letter-spacing="1.2">02  CLASSIFY</text>
+    <text x="860" y="46" fill="#94a3b8" font-size="15" font-weight="700" letter-spacing="1.2">03  EXACTLY ONE ROUTE</text>
+    <text x="1248" y="46" fill="#94a3b8" font-size="15" font-weight="700" letter-spacing="1.2">04  STREAM</text>
+
+    <rect x="36" y="68" width="260" height="156" rx="16" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
+    <text x="166" y="104" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="700">CLIENT</text>
+    <text x="166" y="136" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="700">LogiFlow</text>
+    <text x="166" y="164" text-anchor="middle" fill="#94a3b8" font-size="15">Message and session role</text>
+    <text x="166" y="188" text-anchor="middle" fill="#94a3b8" font-size="15">Renders the live stream</text>
+    <line x1="296" y1="146" x2="340" y2="146" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <rect x="344" y="68" width="310" height="156" rx="16" fill="#0b1220" stroke="#a78bfa" stroke-width="2"/>
+    <text x="499" y="104" text-anchor="middle" fill="#c4b5fd" font-size="14" font-weight="700">SUPERVISOR</text>
+    <text x="499" y="136" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="700">One route</text>
+    <text x="499" y="164" text-anchor="middle" fill="#94a3b8" font-size="15">Agent, intent, order ID</text>
+    <text x="499" y="188" text-anchor="middle" fill="#94a3b8" font-size="15">Does not answer or call a tool</text>
+
+    <line x1="654" y1="146" x2="708" y2="146" stroke="#7dd3fc" stroke-width="2.5"/>
+    <line x1="708" y1="112" x2="708" y2="418" stroke="#7dd3fc" stroke-width="2.5"/>
+    <line x1="708" y1="112" x2="752" y2="112" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <line x1="708" y1="214" x2="752" y2="214" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <line x1="708" y1="316" x2="752" y2="316" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <line x1="708" y1="418" x2="752" y2="418" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <rect x="756" y="72" width="200" height="80" rx="14" fill="#0b1220" stroke="#60a5fa" stroke-width="2"/>
+    <text x="856" y="102" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700">CONVERSATION</text>
+    <text x="856" y="128" text-anchor="middle" fill="#f8fafc" font-size="17" font-weight="700">Direct reply</text>
+    <line x1="956" y1="112" x2="992" y2="112" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="996" y="72" width="180" height="80" rx="14" fill="#10213b" stroke="#1e293b"/>
+    <text x="1086" y="102" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="700">OPENAI</text>
+    <text x="1086" y="128" text-anchor="middle" fill="#f8fafc" font-size="17">Chat only</text>
+    <line x1="1176" y1="112" x2="1212" y2="112" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="1216" y="72" width="188" height="80" rx="14" fill="#0b1220" stroke="#60a5fa"/>
+    <text x="1310" y="118" text-anchor="middle" fill="#f8fafc" font-size="17">No tools</text>
+
+    <rect x="756" y="174" width="200" height="80" rx="14" fill="#0b1220" stroke="#34d399" stroke-width="2"/>
+    <text x="856" y="204" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">ORDERS</text>
+    <text x="856" y="230" text-anchor="middle" fill="#f8fafc" font-size="17" font-weight="700">Order tools</text>
+    <line x1="956" y1="214" x2="992" y2="214" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="996" y="174" width="180" height="80" rx="14" fill="#10213b" stroke="#1e293b"/>
+    <text x="1086" y="204" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="700">MCP</text>
+    <text x="1086" y="230" text-anchor="middle" fill="#f8fafc" font-size="17">Logistics server</text>
+    <line x1="1176" y1="214" x2="1212" y2="214" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="1216" y="174" width="188" height="80" rx="14" fill="#0b1220" stroke="#34d399"/>
+    <text x="1310" y="208" text-anchor="middle" fill="#f8fafc" font-size="16">Read now</text>
+    <text x="1310" y="230" text-anchor="middle" fill="#6ee7b7" font-size="16">Cancel waits</text>
+
+    <rect x="756" y="276" width="200" height="80" rx="14" fill="#0b1220" stroke="#22d3ee" stroke-width="2"/>
+    <text x="856" y="306" text-anchor="middle" fill="#67e8f9" font-size="13" font-weight="700">POLICY</text>
+    <text x="856" y="332" text-anchor="middle" fill="#f8fafc" font-size="17" font-weight="700">Documents</text>
+    <line x1="956" y1="316" x2="992" y2="316" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="996" y="276" width="180" height="80" rx="14" fill="#10213b" stroke="#1e293b"/>
+    <text x="1086" y="306" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="700">PINECONE</text>
+    <text x="1086" y="332" text-anchor="middle" fill="#f8fafc" font-size="17">One corpus</text>
+    <line x1="1176" y1="316" x2="1212" y2="316" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="1216" y="276" width="188" height="80" rx="14" fill="#0b1220" stroke="#22d3ee"/>
+    <text x="1310" y="310" text-anchor="middle" fill="#f8fafc" font-size="16">Answer</text>
+    <text x="1310" y="332" text-anchor="middle" fill="#67e8f9" font-size="16">plus sources</text>
+
+    <rect x="756" y="378" width="200" height="80" rx="14" fill="#0b1220" stroke="#fb7185" stroke-width="2"/>
+    <text x="856" y="408" text-anchor="middle" fill="#fda4af" font-size="13" font-weight="700">GUARDRAIL</text>
+    <text x="856" y="434" text-anchor="middle" fill="#f8fafc" font-size="17" font-weight="700">Refuse</text>
+    <line x1="956" y1="418" x2="992" y2="418" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="996" y="378" width="180" height="80" rx="14" fill="#10213b" stroke="#1e293b"/>
+    <text x="1086" y="408" text-anchor="middle" fill="#94a3b8" font-size="13" font-weight="700">NO LOOKUP</text>
+    <text x="1086" y="434" text-anchor="middle" fill="#f8fafc" font-size="17">Stops here</text>
+    <line x1="1176" y1="418" x2="1212" y2="418" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="1216" y="378" width="188" height="80" rx="14" fill="#0b1220" stroke="#fb7185"/>
+    <text x="1310" y="412" text-anchor="middle" fill="#f8fafc" font-size="16">Out of scope</text>
+    <text x="1310" y="434" text-anchor="middle" fill="#fda4af" font-size="16">or unauthorized</text>
+
+    <line x1="1086" y1="458" x2="1086" y2="500" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <rect x="220" y="508" width="1000" height="156" rx="16" fill="#0b1220" stroke="#38bdf8" stroke-width="2"/>
+    <text x="720" y="556" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="700">Reply streams back into the chat</text>
+    <text x="720" y="590" text-anchor="middle" fill="#94a3b8" font-size="16">start   ·   delta   ·   message   ·   tool result   ·   sources   ·   confirmation   ·   done</text>
+    <text x="720" y="624" text-anchor="middle" fill="#67e8f9" font-size="16">LangSmith records the route, the tool, and the result</text>
+  </g>
+</svg>

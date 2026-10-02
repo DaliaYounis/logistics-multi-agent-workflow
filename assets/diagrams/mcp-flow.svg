@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="540" viewBox="0 0 1440 540" role="img" aria-labelledby="title desc">
+  <title id="title">MCP flow</title>
+  <desc id="desc">The orders agent calls the logistics MCP server with the authenticated user. Writes also send an idempotency key.</desc>
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.42" stop-color="#2563eb"/>
+      <stop offset="0.72" stop-color="#06b6d4"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 1.4 9 5 0 8.6Z" fill="#7dd3fc"/>
+    </marker>
+    <clipPath id="card"><rect width="1440" height="540" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)" font-family="Inter, Segoe UI, sans-serif">
+    <rect width="1440" height="540" fill="#070d18"/>
+    <rect width="1440" height="6" fill="url(#bar)"/>
+    <rect x="40" y="36" width="380" height="468" rx="18" fill="#0b1220" stroke="#34d399" stroke-width="2"/>
+    <text x="230" y="80" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">ORDERS AGENT</text>
+    <text x="230" y="118" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">Tool call</text>
+    <text x="230" y="150" text-anchor="middle" fill="#94a3b8" font-size="16">Arguments already validated</text>
+    <rect x="72" y="178" width="316" height="76" rx="14" fill="#10213b" stroke="#1e293b"/>
+    <text x="230" y="210" text-anchor="middle" fill="#f8fafc" font-size="18" font-weight="700">Authenticated user</text>
+    <text x="230" y="236" text-anchor="middle" fill="#94a3b8" font-size="15">Sent with every call</text>
+    <rect x="72" y="272" width="316" height="76" rx="14" fill="#10213b" stroke="#fbbf24"/>
+    <text x="230" y="304" text-anchor="middle" fill="#fcd34d" font-size="18" font-weight="700">Idempotency key</text>
+    <text x="230" y="330" text-anchor="middle" fill="#94a3b8" font-size="15">Writes only</text>
+    <text x="230" y="420" text-anchor="middle" fill="#94a3b8" font-size="16">The model never sees</text>
+    <text x="230" y="446" text-anchor="middle" fill="#94a3b8" font-size="16">the order store.</text>
+    <line x1="420" y1="270" x2="468" y2="270" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="472" y="36" width="420" height="468" rx="18" fill="#10213b" stroke="#38bdf8" stroke-width="2"/>
+    <text x="682" y="80" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="700">MCP SERVER</text>
+    <text x="682" y="118" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">Logistics tools</text>
+    <text x="682" y="150" text-anchor="middle" fill="#94a3b8" font-size="16">Streamable HTTP</text>
+    <rect x="512" y="184" width="340" height="56" rx="12" fill="#0b1220"/>
+    <text x="682" y="218" text-anchor="middle" fill="#f8fafc" font-size="17">Must be a customer</text>
+    <rect x="512" y="256" width="340" height="56" rx="12" fill="#0b1220"/>
+    <text x="682" y="290" text-anchor="middle" fill="#f8fafc" font-size="17">Order must be theirs</text>
+    <rect x="512" y="328" width="340" height="56" rx="12" fill="#0b1220"/>
+    <text x="682" y="362" text-anchor="middle" fill="#f8fafc" font-size="17">Cancel key required</text>
+    <text x="682" y="440" text-anchor="middle" fill="#94a3b8" font-size="16">Delivered orders cannot be cancelled.</text>
+    <line x1="892" y1="270" x2="940" y2="270" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="944" y="36" width="456" height="210" rx="18" fill="#0b1220" stroke="#34d399" stroke-width="2"/>
+    <text x="1172" y="74" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">READ</text>
+    <text x="1172" y="110" text-anchor="middle" fill="#f8fafc" font-size="17">order_status</text>
+    <text x="1172" y="138" text-anchor="middle" fill="#f8fafc" font-size="17">delivery_estimate</text>
+    <text x="1172" y="166" text-anchor="middle" fill="#f8fafc" font-size="17">list_customer_orders</text>
+    <text x="1172" y="204" text-anchor="middle" fill="#94a3b8" font-size="15">eligibility is also a read</text>
+    <rect x="944" y="264" width="456" height="240" rx="18" fill="#0b1220" stroke="#fbbf24" stroke-width="2"/>
+    <text x="1172" y="312" text-anchor="middle" fill="#fcd34d" font-size="14" font-weight="700">WRITE</text>
+    <text x="1172" y="356" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="700">cancel_order</text>
+    <text x="1172" y="394" text-anchor="middle" fill="#94a3b8" font-size="16">Only after the user confirms</text>
+    <text x="1172" y="420" text-anchor="middle" fill="#94a3b8" font-size="16">inside the graph</text>
+  </g>
+</svg>
